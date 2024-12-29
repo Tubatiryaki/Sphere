@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.bgone {
+  @apply bg-white dark:bg-mycolor-100;
 }
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
+.bgHeader {
+  @apply bg-mycolor-300 hover:bg-mycolor-300 dark:text-black dark:bg-mycolor-300 dark:hover:bg-mycolor-300 !important;
 }
