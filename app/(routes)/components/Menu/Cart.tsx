@@ -2,8 +2,6 @@
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ShoppingBagIcon } from "lucide-react";
-import { categories } from "@/constant";
-import Link from "next/link";
 const CartMenu = () => {
   return (
     <>

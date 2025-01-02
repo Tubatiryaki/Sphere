@@ -15,13 +15,38 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { categories } from "@/constant";
+import { usePathname } from "next/navigation";
 
 const NavMenu = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <>
-      <section className="flex justify-center items-center py-2 bg-mycolor-300">
+      <section className=" md:flex justify-center items-center py-4 bg-mycolor-300">
         <NavigationMenu>
           <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={`${navigationMenuTriggerStyle()} bgHeader ${
+                    pathname === "/" ? "activeHeader" : ""
+                  }`}
+                >
+                  Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/about" legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={`${navigationMenuTriggerStyle()} bgHeader ${
+                    pathname === "/about" ? "activeHeader" : ""
+                  }`}
+                >
+                  About Us
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="bgHeader">
                 Recent Product
@@ -55,10 +80,14 @@ const NavMenu = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bgHeader">
+              <NavigationMenuTrigger
+                className={`bgHeader ${
+                  pathname.startsWith(`/shop`) ? "activeHeader" : ""
+                }`}
+              >
                 Categories
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuContent asChild>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                   {categories.map((component) => (
                     <ListItem
@@ -73,11 +102,13 @@ const NavMenu = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="/contact" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} bgHeader`}
+                  className={`${navigationMenuTriggerStyle()} bgHeader ${
+                    pathname === "/contact" ? "activeHeader" : ""
+                  }`}
                 >
-                  Documentation
+                  Contact
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -93,7 +124,7 @@ const ListItem = React.forwardRef<
 >(({ className, title, children, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
+      <NavigationMenuLink>
         <a
           ref={ref}
           className={cn(

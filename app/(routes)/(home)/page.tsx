@@ -1,10 +1,11 @@
-import Header from "../components/Menu/Header";
+import Hero from "../components/Hero";
+import ProductList from "../components/product/ProductList";
 
 export default function Home() {
   return (
     <div>
-      <Header />
-      Home
+      <Hero />
+      <ProductList />
     </div>
   );
 }

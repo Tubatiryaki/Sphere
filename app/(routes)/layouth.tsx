@@ -1,17 +1,11 @@
 import React from "react";
-import Header from "./components/Menu/Header";
-import Footer from "./components/footer";
 
-interface RoutesLayouthProps {
+interface RoutesLayoutProps {
   children: React.ReactNode;
 }
-const RoutesLayouth = ({ children }: RoutesLayouthProps) => {
-  return;
-  <>
-    <Header />
-    {children}
-    <Footer />
-  </>;
+
+const RoutesLayout = ({ children }: RoutesLayoutProps) => {
+  return <>{children}</>;
 };
 
-export default RoutesLayouth;
+export default RoutesLayout;
