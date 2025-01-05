@@ -11,7 +11,7 @@ function Footer() {
   };
   return (
     <>
-      <section className="text-sm text-center flex flex-col p-4">
+      <section className="text-sm text-center flex flex-col p-8 bg-mycolor-200">
         <section>
           {/* <Button variant="link" onClick={() => router.push("/")}>
             All Right Reserverd Ecommerce Website

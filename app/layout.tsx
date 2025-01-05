@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pacifico } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "./(routes)/components/Menu/Header";
 import Footer from "./(routes)/components/footer";
+import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-const pacifico = Pacifico({
-  subsets: ["latin", "cyrillic"],
-  weight: "400",
-});
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pacifico} antialiased`}
-      >
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -40,7 +28,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <section className="min-h-screen">{children}</section>
+          <div className="min-h-screen">{children}</div>
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>
