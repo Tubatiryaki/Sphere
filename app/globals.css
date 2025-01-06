@@ -11,3 +11,9 @@
 .activeHeader {
   @apply underline !important;
 }
+.validateLable {
+  @apply text-black dark:text-white !important;
+}
+.validateError {
+  @apply text-red-700 dark:text-red-400 !important;
+}

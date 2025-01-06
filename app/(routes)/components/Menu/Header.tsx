@@ -28,7 +28,7 @@ const Header = () => {
   };
   return (
     <>
-      <section className="mx-auto bgone shadow-lg">
+      <section className=" mx-auto bgone shadow-lg z-10">
         <section className="container flex flex-row items-center justify-between p-5">
           <section className={pacifico.className}>Ecommerce</section>
           <section className="hidden md:flex relative md:min-w-96 lg:w-1/2">

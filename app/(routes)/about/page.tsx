@@ -25,7 +25,7 @@ const AboutPage = async () => {
   const data = await getData();
   return (
     <>
-      <div className="container mx-auto py-10">
+      <div className="container mx-auto py-10 border mt-10 rounded-xl dark:border-slate-600">
         <DataTable columns={columns} data={data} />
       </div>
     </>
