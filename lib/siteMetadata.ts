@@ -5,7 +5,7 @@ export const siteMetadata = {
   description: "Next.js, Tailwind Css Proje",
   language: "en-us",
   theme: "system",
-  siteUrl: "",
+  siteUrl: "https://localhost:3000",
   siteLogo: "/logo.png",
   socialBanner: "",
   email: "tubatiryaki25@gmail.com",
