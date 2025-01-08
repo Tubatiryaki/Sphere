@@ -1,0 +1,15 @@
+export const siteMetadata = {
+  title: "Tuba Tiryaki | Frontend developer",
+  author: "Tuba Tiryaki",
+  headerTitle: "Sphere",
+  description: "Next.js, Tailwind Css Proje",
+  language: "en-us",
+  theme: "system",
+  siteUrl: "",
+  siteLogo: "/logo.png",
+  socialBanner: "",
+  email: "tubatiryaki25@gmail.com",
+  github: "tubatiryaki",
+  linkedin: "tubatiryaki",
+  locale: "en-US",
+};
